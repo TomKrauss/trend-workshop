@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<body>
+
+<ui:composition>
+<!-- This is the actual part included in the parent page -->
+
+<div class="menuContainer" style="padding: 1em;">
+<div class="sideBarH1">Menu</div>
+<div class="sideBarMenu"><a class="menuLink" href="${request.contextPath}">Index</a></div>
+<div class="sideBarMenu"><a class="menuLink" href="javascript:history.back()">Back</a></div>
+</div>
+
+<!-- End of the actual part included in the parent page -->
+
+</ui:composition>
+
+</body>
+</html>

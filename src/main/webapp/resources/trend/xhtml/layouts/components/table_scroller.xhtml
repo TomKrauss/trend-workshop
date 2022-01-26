@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+<!--
+  Include for table scroller. 
+  The include has one parameter - reRenderIds - that specifies 
+  what components have to be rerendered when the scroller has changed the view window. 
+  
+ -->
+ <ui:composition>
+	<f:loadBundle
+		basename="de.gebit.trend.servlet.gui.application.Messages"
+		var="bundle" />
+	<f:loadBundle
+		basename="de.gebit.trend.servlet.gui.application.DefaultMessagesText"
+		var="bundle2" />
+	<div class="browserScrollerSection" >
+		<trend:tableScroller var="scroller">
+			<div jsf:rendered="#{scroller.needsPagerControls or scroller.needsBackControls}">
+			<span>
+				<trend:label id="labelScrollerShow" text="#{bundle.browserShow}"/>
+				<trend:input id="visibleItemCount" type="number" style="width: 40px;"/> 
+				<trend:label id="labelScrollerOf" text="#{bundle.browserOf}"/>
+				<trend:label id="totalRows" text="#{scroller.totalRows}"/>
+				<trend:label id="x" text=" " />
+				<trend:label id="labelScrollerFilteredRows" text="#{bundle.browserRowsFound}"/> 
+				<trend:input id="topPageRow" type="number" style="width: 40px;"/> 
+				<trend:action id="updateScrollerButton" title="#{bundle2.DefaultWScroller_updateScroller_tip}" text="&lt;&gt;" execute="cBrowser" render="cBrowser buttonPanel"/>
+			</span>
+			<span style="float: right; ">
+				<trend:action id="first" text="&lt;&lt;" title="#{bundle2.DefaultWScroller_first_tip}"/>
+				<trend:action id="previous" text="&lt;" title="#{bundle2.DefaultWScroller_previous_tip}"/> 
+				<trend:action id="next" text="&gt;" title="#{bundle2.DefaultWScroller_next_tip}"/> 
+				<trend:action id="last" text="&gt;&gt;" title="#{bundle2.DefaultWScroller_last_tip}"/>
+			</span>
+			</div>
+		</trend:tableScroller>
+	</div>
+</ui:composition>
+</html>

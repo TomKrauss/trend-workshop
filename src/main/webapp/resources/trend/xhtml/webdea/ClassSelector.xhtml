@@ -1,0 +1,30 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<trend:resourceReferences/>
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+		<trend:popupDialog title="Select Type"  rendered="true" style="width: 250px;" moveable="true" id="d">
+			<table border="0" width="100%">
+				<tr valign="middle">
+					<td style="padding: 10px 30px 10px 10px; ">
+					<trend:list binding="#{TrendView.pcView.classList}" visibleItemCount="10" id="classList">
+						<f:ajax render="buttonPanel"/>
+					</trend:list>
+					</td>
+				</tr>
+				<tr>
+					<td><ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/></td>
+				</tr>
+			</table>
+		</trend:popupDialog>
+	</ui:define>
+</ui:composition>
+</html>

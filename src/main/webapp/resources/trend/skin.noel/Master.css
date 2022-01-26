@@ -1,0 +1,1272 @@
+/*
+ * Default style sheet for the TREND Web Beans Controls. This special version contains
+ * no EL expressions and is in particular used in the preview mode, when editing a Facelets
+ * page using the Eclipse Web Editor.
+ */
+
+ /**
+  * trend:action buttons
+  */
+.temporaryDisabled {
+	color: #888888;
+}
+
+input[type="image"].temporaryDisabled {
+	opacity:.50;
+	filter: alpha(opacity=50);
+}
+
+img.button, img.submit {
+position: relative;
+bottom: -3px;
+}
+
+a.disabledRolloverButton {
+	border: solid #aaaaaa;
+	border-width: 1px;
+	text-decoration: none;
+	padding: 5px;
+	margin: 0.2em;
+}
+
+/**
+ * For historic reasons we are using a CSS style named "button" for trend:action of type rollover button.
+ */
+a.button {
+	background-color: #caeeee;
+	color: #000000;
+	text-decoration: none;
+	border: solid #aaaaaa;
+	border-width: 1px;
+	padding: 5px;
+	box-shadow: 4px 4px 3px #e4e4e4;
+	margin: 0.2em;
+	margin-bottom: 1em;
+}
+
+a.button:hover {
+	background: linear-gradient(#7799bb, #245480);
+	color: #ffffff;
+	text-decoration: none !important;
+	box-shadow: 4px 4px 3px darkgrey;
+}
+
+.t_rolloverButton {
+	background: transparent;
+	margin: 0.5em;
+	padding: 0.5em;
+	font-weight: bold;
+	border: 1px solid lightgrey;
+	display: inline-block;
+	box-shadow: 4px 4px 3px #e4e4e4;
+}
+
+.t_rolloverButton:hover {
+	background: linear-gradient(#7799bb, #245480);
+	border: 1px solid darkgrey;
+	color: white;
+	box-shadow: 4px 4px 3px darkgrey;
+}
+
+
+.t_splitButton {
+	background: #dedede;
+	padding: 0.4em 0.45em 0.22em 0.4em;
+	border: 1px solid #555555;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0 0.2em 0 0.1em;
+}
+
+.t_splitButton>.button {
+	background-color: transparent;
+	border: transparent;
+	border-width: 1px;
+	padding: 0px;
+	box-shadow: 0 0 0 0;
+}
+
+/**
+ * Relation editors - relation editor panels etc...
+ */
+/* CSS Style of additional relation buttons as rendered by generic BOEditors.  */
+.inplaceActionButton {
+	position: relative;
+	left: 10px;
+	top: 3px;
+}
+
+.relationEditorButtonPanel td {
+	padding: 3px;
+}
+
+.relationEditorButtonPanel {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+
+/**
+ * Menus and side bar
+ */
+ .menuLevel2 {
+padding-top: 2px;
+padding-bottom: 4px;
+padding-right: 6px;
+vertical-align: top;
+font-size: 8pt;
+color: #333366;
+padding-left: 12px;
+}
+
+a.menuLink {
+	text-decoration:none;
+	margin:0px;
+	display:block;
+	padding:3px;
+	padding-left: 15px;
+}
+
+a.menuLink:hover {
+background-color: #ffffff;
+}
+
+.messageBox {
+border: solid #caeeee;
+background: #cccccc;
+/* Mozilla: */
+background: -moz-linear-gradient(top, #cccccc, #ffffff);
+/* Chrome, Safari:*/
+background: -webkit-gradient(linear,
+            left top, left bottom, from(#cccccc), to(#ffffff));
+/* MSIE */
+filter: progid:DXImageTransform.Microsoft.Gradient(
+            StartColorStr='#cccccc', EndColorStr='#ffffff', GradientType=0);
+padding-bottom: 1em;
+padding-right: 1em;
+max-width: 500px;
+}
+
+.trend-card .editorField {
+	width: 18em;
+}
+
+.t_inputField--right-aligned {
+	text-align: right;
+}
+
+.mandatoryLabel {
+	font-weight: bold;
+}
+
+.mandatoryEditorField {
+	background-color: #ffffdd;
+}
+
+.disabledEditorField {
+	background-color: #caeeee;
+}
+
+thead.t_scrollable, tfoot.t_scrollable {
+	display:block;
+	margin-right: 17px;
+}
+
+tbody.t_scrollable {
+	display:block;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+table.tableDefaults {
+	border-collapse: collapse;
+}
+
+table.tableDefaults > tr > td, table.tableDefaults > tbody > tr > td, .tableDefaults th {
+	border: solid #dfdfdf;
+	border-width: 1px;
+}
+
+table.tableDefaults > tr > td, table.tableDefaults > tfoot > tr > td {
+	border: solid #dfdfdf 1px;
+	background: #efefef;
+	font-weight: bold;
+}
+
+.tableDefaults th {
+	font-weight: bold;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.tableHeader>th a {
+	color: white;
+	text-decoration: none;
+}
+
+td.tablePlaceholder {
+	color: gray;
+	padding: 20px !important;
+	text-align: center;
+}
+
+.tableHeader, .tableSortColumnHeader  {
+	color: white;
+	background: blue;
+	background-color: #245480;
+}
+
+.tableSortUp a, .tableSortUp-1 a, .tableSortUp-2 a, .tableSortUp-3 a, .tableSortUp-4 a {
+	background: url("images/sortup.gif");
+}
+
+.tableSortDown a, .tableSortDown-1 a, .tableSortDown-2 a, .tableSortDown-3 a, .tableSortDown-4 a {
+	background: url("images/sortdown.gif");
+}
+
+.tableSortUpdown a {
+	background: url("images/sortupdown.gif");
+}
+
+.tableSortUp-1 a:after, .tableSortUp-2 a:after, .tableSortUp-3 a:after, .tableSortUp-4 a:after, .tableSortDown-1 a:after, .tableSortDown-2 a:after, .tableSortDown-3 a:after, .tableSortDown-4 a:after {
+	margin-left: 2em;
+	font-size: xx-small;
+	vertical-align: super;
+}
+
+.tableSortUp-1 a:after, .tableSortDown-1 a:after {
+	content: "1";
+}
+
+.tableSortDown-2 a:after, .tableSortUp-2 a:after {
+	content: "2";
+}
+
+.tableSortUp-3 a:after, .tableSortDown-3 a:after {
+	content: "3";
+}
+
+.tableSortUp-4 a:after, .tableSortDown-4 a:after {
+	content: "4";
+}
+
+.tableSortUp a, .tableSortUpdown a, .tableSortDown a, .tableSortDown-1 a, .tableSortDown-2 a, .tableSortDown-3 a, .tableSortDown-4 a, .tableSortUp-1 a, .tableSortUp-2 a, .tableSortUp-3 a, .tableSortUp-4 a {
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 10px;
+}
+
+.tableSortColumnHeader {
+	background: transparent;
+	background-color: #666666;
+}
+
+/* Used for resizeable table columns to style the "drag handle" */
+.tableDragHandle {
+	position:absolute;
+	height:100%;
+	width:5px;
+	margin-right:-5px;
+  	left:100%;
+  	top: 0;
+  	cursor:w-resize;
+  	z-index:10;
+}
+
+.tableDragHandle:hover {
+	background-repeat: no-repeat;
+	background-position: top;
+	left: auto;
+	top: -5px;
+	width: 30px;
+	height: 80px;
+	right: -20px;
+	margin-right: 0;
+}
+
+.tableSortColumnRowOdd {
+background-color: #efefbf;
+}
+
+.tableSortColumnRowEven {
+background-color: #efefef;
+}
+
+.tableHeader th {
+border-right: thin solid #caeeee;
+}
+
+.tableRowOdd {
+	background-color: #ffffdd;
+}
+
+.tableRowEven {
+	background-color: #ffffff;
+}
+
+.tableRowSelected td {
+   color: white;
+   background-color: darkBlue;
+}
+
+/* If the tableRowRollover style is set on the table, we will display table rows using
+   a special hovering mode.
+ */
+.tableRowRollover tr.t_tableRow:hover {
+	cursor: pointer;
+	color: #0000ff;
+	background-color: #caeeee;
+}
+
+/* trend:tabbedPane - styles*/
+.tabbedPane .tabContainer table {
+	margin: 0;
+}
+
+table.tabbedPane {
+	margin: 2px;
+}
+
+.tabbedPane .tabContainer {
+	padding-left: 0;
+	margin: 0;
+}
+
+.tabbedPane .tabItem.is-active, .tabItem {
+	padding: 5px;
+	line-height: 170%;
+}
+
+.tabContainer.tabPlacement-right, .tabContainer.tabPlacement-left {
+	padding: 0;
+}
+
+.tabContainer.tabPlacement-top {
+	vertical-align: bottom;
+}
+
+.tabContainer.tabPlacement-bottom {
+	vertical-align: top;
+}
+
+.tabContainer.tabPlacement-top>div, .tabContainer.tabPlacement-bottom>div {
+	display: inline;
+	margin-right: 0.2em;
+}
+
+.tabContainer.tabPlacement-top, .tabContainer.tabPlacement-bottom {
+	padding: 0;
+	padding-right: 1.5em;
+}
+
+.tabContainer.tabPlacement-right, .tabContainer.tabPlacement-left {
+	vertical-align: top;
+	padding-top: 0.2em;
+}
+
+.tabContainer.tabPlacement-right > div, .tabContainer.tabPlacement-left > div {
+	margin-right: -3px;
+	margin-left: -3px;
+}
+
+.tabContainer.tabPlacement-right > div, .tabContainer.tabPlacement-left > div {
+	margin-bottom: 0.3em;
+}
+
+.tabbedPane .tabItem {
+	border: none;
+	color: #333333;
+	background: #caeeee;
+}
+
+.tabbedPane .tabPlacement-top>div>.tabItem, .tabbedPane .tabPlacement-left>div>.tabItem {
+	border-top-left-radius: 5px;
+}
+
+.tabbedPane .tabPlacement-bottom>div>.tabItem, .tabbedPane .tabPlacement-right>div>.tabItem {
+	border-bottom-right-radius: 5px;
+}
+
+.tabbedPane .tabItem[disabled="true"] {
+	border: none;
+	color: #333333;
+	background: #bfbfcf;
+}
+
+.tabbedPane .tabItem[disabled="true"]:hover {
+	text-decoration:none;
+}
+
+.tabbedPane .tabItem.is-active {
+	font-weight: bold;
+	color: white;
+	background: #dfdfdf;
+}
+
+.tabbedPane .tabItem.is-active:hover {
+	color: #eeeeff;
+}
+
+.tabbedPane .tabItem:hover {
+	text-decoration:underline;
+	color: darkblue;
+}
+
+.tabbedPane td.tabContainer > .tabItem.is-active {
+	padding: 4px;
+	background: #777777;
+	color: white;
+}
+
+.tabbedPane td.tabContainer > .tabItem {
+	padding: 4px;
+	background: #cccccc;
+}
+
+.tabbedPane {
+	margin-bottom: 7px;
+}
+
+.tabPanel.tabPlacement-left  {
+	border-left: 1px solid #caeeee;
+	border-top: 1px solid #caeeee;
+}
+
+.tabPanel.tabPlacement-top {
+	border-top: 1px solid #caeeee;
+	border-left: 1px solid #caeeee;
+}
+
+.tabPanel.tabPlacement-right {
+	border-right: 1px solid #caeeee;
+	border-top: 1px solid #caeeee;
+}
+
+.tabPanel.tabPlacement-bottom {
+	border-left: 1px solid #caeeee;
+	border-bottom: 1px solid #caeeee;
+}
+
+.tabPanel {
+	padding: 5px;
+	text-align: left;
+	height: 100%;
+}
+
+/* trend:tree - main style */
+.wb-tree {
+    border-spacing: 0;
+    border: 1px #8e8e8e dotted;
+    overflow: hidden;
+}
+
+.wb-tree td {
+    padding: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+/* trend:tree - tree-line styles */
+.wb-tr-lm {
+	background-image: url('images/linemiddlenode.gif')");
+}
+
+.wb-tr-lv {
+    background-image: url('images/linevertical.gif')");
+}
+
+.wb-tr-ll {
+   background-image: url('images/linelastnode.gif')");
+}
+
+.wb-tr-lm, .wb-tr-lv, .wb-tr-ll, .wb-tr-empty {
+   background-position: top left;
+   background-repeat: no-repeat;
+   width: 16px;
+   height: 100%;
+   min-height: 24px;
+   position: relative;
+   float: left;
+}
+
+/* trend:tree - icon in the tree */
+.wb-tr-ico {
+   width: 16px;
+   min-height: 20px;
+   bottom: 0;
+   padding: 2px;
+}
+
+.wb-tr-ico img {
+   position: relative;
+   top: 4px;
+}
+
+/* style class for trend:tree rows (tr elements in a table) */
+.wb-tr-row {
+}
+
+.wb-tr-row td {
+	white-space:nowrap;
+}
+
+.t_tree--nodeHighlight {
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* trend:tree - node expander icon cell */
+.treeNodeExpander {
+   padding: 0;
+   position: relative;
+   left: -14px;
+   top: 7px;
+   width: 0px;
+   float: left;
+}
+
+.treeNodeExpander input {
+   position: relative;
+}
+
+/* trend:tree node text style */
+.treeNodeTextstyle, .treeNodeSelectedTextStyle, .treeNodeSelectedTextstyle a {
+	position: relative;
+	top: 0.4em;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+/* trend:tree selected node text style */
+.treeNodeSelectedTextstyle a {
+   color: white;
+   background-color: darkblue;
+}
+
+/**
+ * Calendar Popup Window Styles
+ */
+/**
+ * The cell holding the button which allows to open the popup.
+ */
+.calendarPopupButtonCell {
+	margin: 0 0.5em 0 0;
+	width: 1.6em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.calendarPopupButtonCell a {
+	vertical-align: middle;
+}
+
+.t_calendarControl select {
+	margin-right: 0.2em;
+}
+
+.calendarPopupEnabledDay, .calendarPopupHoliday1, .calendarPopupHoliday2 {
+	background: #efefef;
+	text-align: center;
+}
+
+ .calendarPopupWeek {
+	text-align: center;
+}
+
+.calendarPopupEnabledDay, .calendarPopupHoliday1, .calendarPopupHoliday2 a {
+	text-decoration: none;
+	font-size: small;
+}
+
+.calendarPopupHoliday1 a {
+	color: red;
+}
+
+.calendarPopupHoliday2 a {
+	color: #999999;
+}
+
+.calendarPopupDisabledDay {
+	background-color: #d4d4d4;
+	text-align: center;
+}
+
+.calendarPopupDisabledDay a {
+	text-decoration: none;
+	font-size: small;
+}
+
+.calendarPopupSelectedDay {
+	background: darkBlue;
+	text-align: center;
+}
+
+.calendarPopupSelectedDay a {
+   color: white;
+	text-decoration: none;
+	font-size: small;
+}
+
+.calendarPopupDayOfWeek {
+	text-align: center;
+	font-size: small;
+}
+
+/* The OK + Today buttons in the trend:calendar panel */
+.calendarPopupButton {
+	font-size: small;
+	font-weight: bold;
+}
+
+/* The days in the trend:calendar panel */
+.calendarPopupTable {
+	border-color: white;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+/* The header in the trend:calendar panel */
+.calendarPopupHeaderTable {
+	border-spacing: 2px;
+	font-size: small;
+	min-width: 200px;
+}
+
+/* The Month-and-Year label in the header of the calendar popup */
+.calendarPopupMonthAndYear {
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+/* The month + year choice boxes in the trend:calendar panel */
+.calendarPopupChoice {
+	font-size: small;
+}
+
+/** The style of the popup itself */
+.calendarPopup {
+	border: solid #003099 1px;
+	margin-left: 0;
+	margin-top:  0;
+	background: #f4f4f4;
+	box-shadow: 3px 3px 2px #888888;
+}
+
+.window {
+	border-color: #dfdfdf;
+	border-style: ridge;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	padding: 2px;
+}
+
+.windowButton, .windowHoverButton {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.windowButton {
+	display: inline;
+}
+
+.windowHoverButton {
+	display: none;
+}
+
+.windowTitle {
+	height: 24px;
+	color: #efefef;
+	background: blue;
+	text-align: left;
+	text-indent: 1pt;
+	border-color: #dfdfdf;
+	border-style: outset;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	font-weight: bold;
+}
+
+.windowTitle td {
+	padding: 2px;
+	vertical-align: middle;
+}
+
+.windowTitle img {
+	width: 16px;
+	height: 16px;
+}
+
+div.pulldownMenu {
+	background: #efefef;
+	height: 2em;
+}
+
+ul.pulldownMenu {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	padding-top: 0.2em;
+	cursor: pointer;
+}
+
+/* Pulldown Menu Look&Feel of the side bar */
+ul.pulldownMenu li > ul {
+	background: white;
+	display: block;
+	position: absolute;
+	border: solid;
+	border-color: #888888;
+	border-width: 1px;
+	width: auto;
+	left: -999em;
+	z-index: 10;
+	box-shadow: 5px 5px 2px grey;
+}
+
+ul.pulldownMenu li.menuOpen > ul  {
+	left: auto;
+	padding: 0 1px 1px 1em;
+}
+
+ul.pulldownMenu li.menuOpen > ul li {
+	position: relative;
+	padding: 2px;
+}
+
+ul.pulldownMenu li.menuOpen > ul li.menuOpen {
+	max-height: 1.2em;
+}
+
+ul.pulldownMenu li.menuOpen > ul > li.menuOpen > ul {
+	position: relative;
+	left: 10em;
+	top: -1em;
+}
+
+ul.pulldownMenu>li  {
+	background: #efefef;
+	font-weight: bold;
+	list-style: none;
+	float: left;
+	color: #24547F;
+	width: auto;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 4px;
+	padding-right: 8px;
+}
+
+ul.pulldownMenu li {
+	list-style: none;
+}
+
+ul.pulldownMenu a {
+	color: #24547F;
+}
+
+ul.pulldownMenu a:hover {
+	color: #efefef;
+	text-decoration: none;
+}
+
+ul.pulldownMenu li:hover {
+	list-style: none;
+	background: #bbbbbb;
+	color: white;
+}
+
+
+div.menuSeparatorLine {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Side bar */
+.sideBar {
+    margin: 0px;
+}
+
+.sideBarMenuList {
+  margin-left:2px;
+  margin-right:2px;
+  list-style-type: none;
+  padding-left: 7px;
+}
+
+.sideBarMenuList img {
+	margin-right: 5px;
+	vertical-align: text-bottom;
+}
+
+.sideBarH1, .sideBarH1Collapsed {
+    margin: 0px;
+    font-size: 10pt;
+	background: url("images/arrow_blue.gif");
+	background-repeat: no-repeat;
+	background-position: left 8px;
+	background-color: transparent;
+    padding: 0px;
+    padding-left: 12px;
+	cursor: pointer;
+}
+
+ul.sideBarMenuList.level_0 li.listItemMenu {
+	border-bottom: 1px solid #ACB6BF;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+ul.sideBarMenuList.level_1 li.listItemMenu {
+	border-bottom:  1px dashed #ACB6BF;
+}
+
+/** Used for expanded side bar submenus and for selected items in the side bar */
+.menuHighlightedActionStyle, .sideBarH1, .sideBarH2,
+.sideBarH1 a span,
+.sideBar li a.menuHighlightedActionStyle {
+	color: red;
+}
+
+.sideBarH1 span:hover {
+	color: #6494CF;
+}
+
+.sideBarH2, .sideBarH2Collapsed {
+    margin: 0px;
+    padding: 0px;
+	cursor: pointer;
+}
+
+.sideBarMenu2 {
+    font-size: 9pt;
+	color: red;
+}
+
+.sideBar menu {
+    display:inline;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.sideBar li {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sideBar li a {
+	text-decoration:none;
+    margin:0px;
+    display:block;
+    padding-left:0px;
+    padding-right:3px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.sideBar li a:hover {
+	text-decoration:none;
+    margin:0px;
+    display:block;
+    padding-left:0px;
+    padding-right:3px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+/* Indent the children in the sidebar, but not the headers */
+.sideBarMenuList li a {
+    padding-left:11px;
+}
+.sideBarMenuList li a:hover {
+    padding-left:11px;
+}
+.sideBarMenuList li .sideBarH1,.sideBarH1Collapsed,.sideBarH2,.sideBarH2Collapsed  a {
+    padding-left:0px;
+}
+
+/**
+ * Simulated Popup Dialogs.
+ */
+#trend_dialogOverlay {
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color:#000;
+	opacity:.50;
+	filter: alpha(opacity=50);
+}
+
+#trend_dialogOverlay[id] {
+	position:fixed;
+}
+
+.dialogBoxButton {
+	margin: 10px 0 0 10px;
+}
+
+.dialogBox {
+	left: 50em;
+	top: 10em;
+	z-index: 1001;
+	height:auto;
+	border: 3px solid #aaaaaa;
+	border-radius: 8px;
+	max-width: 60em;
+	background:#efefef;
+	box-shadow: 4px 4px 3px #888888;
+}
+.dialogBox[id] {
+	position: fixed;
+}
+/* This part is IE6 specific. It works around the well known z-index bug */
+* html .dialogBox {
+	position: absolute;
+}
+
+.dialogBoxHeader {
+	cursor: move;
+	color: red;
+	background-color: #dddddd;
+	font-weight: bold;
+	font-size: large;
+	padding: 10px;
+	text-align: center;
+	border-bottom: 1px solid #bbbbbb;
+	border-radius: 4px;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.dialogBoxMessageIcon {
+	text-align: left;
+	position: relative;
+	left: 40px;
+	top: 50px;
+	display: inline;
+}
+
+.dialogBoxMessageArea {
+	text-align: center;
+	margin: 20px 50px 50px 80px;
+	color: #111155;
+	white-space: pre-wrap;
+}
+
+.dialogBoxMessageInput {
+	margin: 10px 0 0 10px;
+	display: inline;
+	color: #111155;
+}
+
+.dialogBoxButtonArea {
+	text-align: center;
+	margin: 20px 50px 50px 20px;
+	padding: 5px;
+	color: #111155;
+}
+
+.t_dashboardMenuItem {
+	font-weight: bold;
+}
+
+.t_dashboardMenuItem span,img {
+	vertical-align: middle;
+}
+
+.t_dashboardMenuItem span {
+	margin: 0 0 0 4px;
+}
+
+.t_dashboardMenuItem div {
+	font-weight: normal;
+	font-size: smaller;
+	margin: 0 0 0 36px;
+}
+
+.t_dashboardCaption {
+	font-size: 14pt;
+	font-weight: bold;
+	color: white;
+}
+
+.t_dashboardCaption td {
+		padding: 0.3em;
+}
+
+.t_dashboardCaption.color1 {
+    background: none #D94625;
+}
+
+.t_dashboardCaption.color2 {
+    background: none #336699;
+}
+
+.t_dashboardCaption.color3 {
+    background: none #33aa33;
+}
+
+.t_dashboardCaption.color4 {
+    background: none #444411;
+}
+
+.t_dashboardCaption.color5 {
+    background: none #776699;
+}
+
+.t_dashboardCaption.color6 {
+    background: none white;
+    color: black;
+}
+
+.t_dashboardCaption.color7 {
+    background: none black;
+}
+
+
+/**
+ * Generic Query Editor - trend:queryEditor
+ */
+.trend-queryeditor-andor-cell {
+	width: 50px;
+}
+
+.trend-queryeditor-operators-cell {
+	width: 85px;
+}
+
+.trend-queryeditor-operators {
+	width: 80px;
+}
+
+.trend-queryeditor-attributes {
+	width: 150px;
+}
+
+.trend-queryeditor-attributes-cell {
+	width: 152px;
+}
+
+.trend-queryeditor-field-cell  {
+	min-width: 200px;
+}
+
+.trend-queryeditor-moreorless-cell {
+	text-align: right;
+}
+
+.trend-queryeditor-value-editor-cell {
+	width: 80%;
+}
+
+/**
+ * trend:popupMenu
+ */
+.pm-selectedItem {
+   color: white;
+   background-color: darkblue;
+}
+
+.pm-menu img {
+	margin-right: 0.5em;
+}
+
+.pm-menu {
+	position:fixed;
+	z-index:10000; border:
+	solid 1px gray;
+	background: white;
+	top: 0;
+	left: 0;
+	padding: 2px;
+	cursor: pointer;
+	box-shadow: 10px 10px 7px #888888;
+}
+
+.pm-separator {
+	height: 1px;
+	width: 100%;
+	margin: 5px 3px 5px 3px;
+	background: #777777 none !important;
+}
+
+.style-selector li {
+   border-radius: 3px 3px 3px 3px;
+   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+   cursor: pointer;
+   float: left;
+   list-style-type: none;
+   margin: 3px;
+   padding: 2px;
+   border-insets: 3px;
+   border: 1px darkgray solid;
+   vertical-align: bottom;
+}
+
+li.style-selector-active {
+   border-insets: 1;
+	border: 3px black solid !important;
+}
+
+.style-selector>li:hover {
+   border-insets: 2px;
+	border: 2px #333333 solid;
+}
+
+/**
+  * Password Strength indicator
+  */
+.t_passwordStrength_weak #thumb {
+	background: red;
+}
+
+.t_passwordStrength_fair #thumb {
+	background: orange;
+}
+
+.t_passwordStrength_good #thumb {
+	background: yellow;
+}
+
+.t_passwordStrength_excellent #thumb {
+	background: green;
+}
+
+.t_progressBar #thumb {
+	background: darkblue;
+}
+.t_progressBar, .t_passwordStrength_weak, .t_passwordStrength_fair,.t_passwordStrength_good,.t_passwordStrength_excellent {
+	border: groove;
+	border-width: 1px;
+	border-color: blue;
+	background: lightblue;
+}
+
+.t_mapped_to_editor {
+	border-width: 2px !important;
+	border-color: orange !important;
+	border-style: solid !important;
+}
+
+.t_dashboardMainPanel {
+	background: #efefef;
+	height: 100%;
+	min-height: 500px;
+}
+
+/**
+ * The dashboard window
+ */
+.t_dashboardWindow {
+	border-collapse: collapse;
+	border: 1px darkgray solid;
+	border-insets: 1 1 1 1;
+}
+
+/**
+ * Makes the dashboard window have a shadow, when the mouse moves over it.
+ */
+.t_dashboardWindow:hover {
+	box-shadow: 4px 4px 2px #888888;
+	}
+
+/**
+ * Fill the content area of dashboard windows by default in white.
+ */
+.t_dashboardWindowContentArea {
+	background: white;
+}
+
+/**
+ * The header section of the dashboard
+ */
+.t_dashboardHeader {
+	background:  #dddddd ;
+	padding: 5px;
+	margin: 0;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+/**
+ * The title of the dashboard displayed in the header section.
+ */
+.t_dashboardTitle {
+	font-size: 20pt;
+	background: transparent;
+	float: left;
+}
+
+/**
+ * Used as the place holder during drag&drop of gadgets in a dashboard.
+ */
+.t_dashboardDnDPlaceholder {
+	border: 1px dotted #882222;
+	height: 20em;
+	background: #ccddff none;
+	margin: 4px;
+	box-shadow: 4px 4px 3px #888888;
+}
+
+.t_dashboardMenuDescription {
+	font-size: smaller;
+	margin-left: 2.4em;
+	max-width: 25em;
+	margin-bottom: 1em;
+}
+
+
+.tabContainer {
+	margin: 0;
+	padding: 0;
+	border-collapse: true;
+}
+
+.tabContainer .tabItem {
+	margin-right: 0.5em;
+	background: #e3e6ea;
+}
+
+.tabContainer .is-active {
+	background: #2a2aaa;
+}
+
+.tabPlacement-top>div, .tabPlacement-bottom>div {
+	display: inline;
+	margin: 0.5em;
+}
+
+.tabContainer span {
+	text-decoration: none;
+	color: black;
+	height: 2em;
+	padding: 3px;
+	min-width: 8em;
+}
+
+.tabContainer .is-active span {
+	color: white;
+	height: 2em;
+	min-width: 8em;
+}
+
+.tabPanel {
+	text-align: left;
+	height: 100%;
+	border-left: 1px solid #e3e6ea;
+	border-top: 1px solid #e3e6ea;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+
+<h3>Unsupported Operation</h3>
+<p>The use case named <tt><h:outputText value="#{ErrorMessageBean.messageParam1}"/></tt> <br/>
+cannot be executed in a TREND Web Application. </p>
+
+Check one of these possible reasons for the failure to execute it:
+<ul>
+<li>It is not a Use Case of type Data Entry, Simple View, Business Transaction, Object View or Workflow - other use case types are currently not supported in TREND Web Applications.</li>
+<li>The workflow contains essential references to platform specific components - like Swing components - which cannot be run in the Web.</li>
+</ul>
+
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<body>
+<ui:composition>
+	<h:outputScript name="jquery.js" library="trend" target="body"/>
+	<h:outputScript name="shrinkingheader.js" library="trend" target="body"/>
+	<h:outputStylesheet name="layout.css" library="trend" target="body"/>
+	<h:outputStylesheet name="shrinkingheader.css" library="trend" target="body"/>
+
+
+<!-- This is the actual part included in the parent page -->
+
+	<f:loadBundle
+		basename="de.gebit.trend.servlet.gui.application.Messages"
+		var="bundle" />
+		
+	<div class="titleBar">
+		<div class="titleHead">
+			<div class="titleApplication"><trend:label style="float: left; height: 70px; line-height: 70px;" text="#{ApplicationBean.title}" /></div>
+			<div class="titleLogo">
+				<a href="${request.contextPath}"><trend:image style="vertical-align:bottom;" url="images/logo.png" library="trend"/></a>
+			</div>
+		</div>
+		<div class="titlePage t_keepOnTop">
+			<div style="float: left;"><trend:label id="view-titleLabel" value="#{TrendView.viewTitle}"/></div>
+			<div style="float: right; color: #eeeeee; font-size: 9pt;">&nbsp;
+			<trend:label
+				text="#{bundle.loggedInLabel}"
+				rendered="#{ApplicationBean.currentUser != null}" />
+			<trend:label
+				text="#{ApplicationBean.currentUser}"
+				style="padding-right: 5px; display: inline;"
+				/>
+			<trend:action
+				style="color: #eeeeee; border-left: solid; border-left-width: 2px; padding-left: 5px;"
+				actionListener="#{ApplicationBean.performLogout}"
+				immediate="true"
+				rendered="#{ApplicationBean.currentUser != null}"
+				rendererType="WHyperlinkButton" text="#{bundle.logoutButton}" />
+			</div>
+		</div>
+		<!-- 
+		Enforces a clean break after the title, clearing any floats.
+		Also, when the titlePage and/or menuBar is set to fixed, we need to
+		accommodate for the loss of space with this adjustmentElement,
+		that dynamically gets some top-padding.
+		-->
+		<div class="titleSeparator" style="width:0; height: 0; padding: 0; margin:0; display:block; clear:both"/>
+	</div>
+
+<!-- End of the actual part included in the parent page -->
+
+</ui:composition>
+
+</body>
+</html>

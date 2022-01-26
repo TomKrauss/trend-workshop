@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+		<trend:label id="cInfoLabel" text="Select a TREND database session (defined in your trend.sessions configuration) to login."/>
+		<trend:panel columns="2">
+			<trend:label id="sessionSelectorLabel" text="Select Session:"/><trend:list visibleItemCount="1" id="cSessionList"/>
+			<trend:label id="usernameLabel" text="User Name:"/><trend:input type="text" id="cUserNameField"/>
+			<trend:label id="passwordLabel" text="Password:"/><trend:input type="text" passwordMode="true" id="cPasswordField"/>
+		</trend:panel>
+		<ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/>
+	</ui:define>
+</ui:composition>
+</html>

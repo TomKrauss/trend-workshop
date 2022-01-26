@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>trend-workshop</display-name>
+  <filter>
+    <filter-name>AuthorizationFilter</filter-name>
+    <filter-class>de.gebit.trend.servlet.security.AuthorizationFilter</filter-class>
+    <init-param>
+      <param-name>loginPage</param-name>
+      <param-value>/faces/resources/trend/xhtml/login/login.xhtml?trend.viewClass=de.gebit.trend.servlet.gui.application.login.LoginView</param-value>
+    </init-param>
+    <init-param>
+      <param-name>errorPage</param-name>
+      <param-value>/faces/resources/trend/xhtml/login/access_error.xhtml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ignoreAccessPattern</param-name>
+      <param-value>.*/trend/.*/login/.*,.*.css,[^/]*/index.xhtml</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthorizationFilter</filter-name>
+    <url-pattern>*.jsf</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>AuthorizationFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>AuthorizationFilter</filter-name>
+    <url-pattern>*.xhtml</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>AuthorizationFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>
+			de.gebit.trend.servlet.server.ServerInitializer
+		</listener-class>
+  </listener>
+  <context-param>
+    <description>For Apache MyFaces: need to refresh transient build or an IllegalStateException may occur in visitTree.</description>
+    <param-name>org.apache.myfaces.REFRESH_TRANSIENT_BUILD_ON_PSS_PRESERVE_STATE</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>trend.serverInitializationHookClass</param-name>
+    <param-value>de.gebit.trend.servlet.server.WebApplicationInitializationHook</param-value>
+  </context-param>
+  <context-param>
+    <param-name>trend.addNoCacheHeaders</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>trend.umlrunner.viewURL</param-name>
+    <param-value>resources/trend/xhtml/umlrunner/umlrunner.xhtml</param-value>
+  </context-param>
+  <context-param>
+    <param-name>trend.pluggableComponents.templatePattern</param-name>
+    <param-value>resources/trend/xhtml/pc/${pctype}.xhtml</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.xhtml</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

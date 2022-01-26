@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+		<table border="0" width="80%">
+			<tr>
+				<td>
+				<table border="0" width="100%" cellpadding="3" cellspacing="0">
+					<tr>
+					<td colspan="2">
+<!-- Insertion point for a custom query editor -->
+<ui:insert name="query_editor">
+					    <trend:queryEditor id="cQueryEditor" binding="#{TrendView.queryEditor}"/>
+</ui:insert>
+					</td>
+					</tr>
+					<tr>
+						<td valign="top" width="30%">
+<!-- Insertion point for a custom explorer tree -->
+<ui:insert name="tree">
+							<trend:tree id="cTree" visibleItemCount="10" displayTreeLines="true" binding="#{TrendView.tree}" width="100%">
+						    	<trend:tableScroller>
+						    		<trend:action id="previous"/>
+						    		<trend:action id="next"/>
+						    	</trend:tableScroller>
+							</trend:tree>
+</ui:insert>
+						</td>
+						<td width="70%">
+							<table border="0" width="100%">
+							<tr><td>
+<!-- Insertion point for a custom browser -->
+<ui:insert name="browser">
+		<trend:table id="cBrowser"
+					binding="#{TrendView.browser}"
+					visibleItemCount="20" displaySelectAllCheckbox="true" selectionColumnIndex="-1"
+					displayHeaderConfigurationMenu="true"
+					columnsResizable="true"
+					rolloverMode="#{rolloverMode ? rolloverMode : false}"
+					encloseInDiv="true"
+					fireItemChanges="true">
+			<ui:insert name="browser_columns"/>
+			<f:ajax event="valueChange" render="cBrowser ${browser_rerender}" execute="cBrowser buttonPanel cDetailsEditor"/>
+			<ui:include src="/resources/trend/xhtml/layouts/components/table_scroller.xhtml">
+				<ui:param name="reRenderIds" value="cBrowser ${browser_rerender}"/>
+			</ui:include>
+
+			<div >
+				<table cellpadding="3" cellspacing="0" border="0" width="100%" class="tableDefaults">
+					<f:attribute name="headerSortColumnStyleClass" value="tableSortColumnHeader"/>
+					<f:attribute name="evenSortColumnStyleClass" value="tableSortColumnRowEven"/>
+					<f:attribute name="oddSortColumnStyleClass" value="tableSortColumnRowOdd"/>
+					<trend:tableHeader />
+					<trend:tableBody />
+				</table>
+				<div align="right" style="border-top: solid 1px #aaaaaa; padding: 2px;">
+					<trend:tableScroller id="scroller2" var="scroller2">
+						<trend:label id="selectedItemCount" value="#{scroller2.selectedItemCount}"/>
+						&nbsp;
+						<trend:label id="labelElementsSelected" text="#{bundle.browserElementsSelected}"/>
+					</trend:tableScroller>
+				</div>
+			</div>
+
+		</trend:table>
+</ui:insert>
+							</td></tr>
+							<tr><td width="70%">
+<!-- Insertion point for a custom details editor -->
+<ui:insert name="details_editor">
+								<trend:boedit id="cDetailsEditor" binding="#{TrendView.detailsEditor}">
+									<f:ajax event="viewChanged" render="buttonPanel"/>
+								</trend:boedit>
+</ui:insert>
+							</td></tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		    <tr>
+				<td>
+<!-- Insertion point for a custom button panel -->
+<ui:insert name="button_panel">
+				<ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/>
+</ui:insert>
+				</td>
+	        </tr>
+		</table>
+
+	</ui:define>
+
+</ui:composition>
+</html>

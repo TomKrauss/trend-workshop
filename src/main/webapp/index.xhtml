@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<h:head>
+	<title> Application</title>
+</h:head>
+<h:body styleClass="t_body">
+<f:view>
+<h:outputStylesheet library="trend" name="Master.css"/>
+<h:outputStylesheet library="trend" name="layout.css" />
+<div class="layout-root">
+<div class="content" style="margin:5px;">
+<h2> Start Page</h2>
+
+<p>Congratulations - if you see this page, you got your TREND Web Beans application up and running.
+<a href="HelloWorld.xhtml?trend.viewClass=de.gebit.trend.servlet.gui.AbstractWView">Click here</a> to start a simple sample. </p>
+<p>
+<a href="resources/trend/xhtml/umlrunner/umlrunner.xhtml?trend.refreshView=true">Click here to start UML Runner</a>
+</p>
+
+</div>
+<div class="footer">
+<ui:insert name="footer">
+	<ui:include src="resources/trend/xhtml/layouts/footer.xhtml" />
+</ui:insert>
+</div>
+</div>
+
+</f:view>
+</h:body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+<!--
+  Include for table body.
+  The include has one parameter: tableId, that defines id attribute of the HTML Table tag.
+ -->
+<ui:composition>
+	<div class="trend_table">
+		<table id="${tableId}" cellpadding="3" cellspacing="0" border="0" width="100%" class="tableDefaults">
+			<trend:tableHeader />
+			<trend:tableBody />
+		</table>
+	</div>
+</ui:composition>
+</html>

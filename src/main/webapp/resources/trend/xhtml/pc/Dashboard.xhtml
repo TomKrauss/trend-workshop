@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+		<trend:panel id="contentPane" prependId="false">
+			<trend:label id="dashboardTitle" text="#{TrendView.viewTitle}" styleClass="trend-dashboard--title" htmlTag="h4"/>
+			<!-- Insertion point for a custom dashboard button panel -->
+			<ui:insert name="dashboard_button_panel">
+				<span jsf:id="dashboardButtonPanel" style="margin: 1em; float: right">
+					<trend:action id="addGadgetButton" rendererType="WRolloverButton" 
+						text="Add Gadgets"
+						displaySplitMenu="true"
+						imageSource="trend://Customize" />
+					<trend:action id="customizeDashboardButton"
+						rendererType="WRolloverButton" imageSource="trend://Edit"
+						render="@form" />
+				</span>
+			</ui:insert>
+			<!-- Insertion point for a custom button panel -->
+			<ui:insert name="button_panel">
+				<ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml" />
+			</ui:insert>
+
+			<!-- Insertion point for the dashboard -->
+			<ui:insert name="dashboard">
+				<trend:dashboard id="dashboard"
+					addGadgetButtonName="addGadgetButton" />
+			</ui:insert>
+		</trend:panel>
+	</ui:define>
+</ui:composition>
+</html>

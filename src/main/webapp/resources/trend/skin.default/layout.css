@@ -1,0 +1,428 @@
+/**
+ * Stylesheet with styles for the default XHTML layout shipped with TREND. Only to be used with the default main.xhtml
+ * page. If you create your own customer / project specific layout, you may safely omit this file.
+ */
+
+/**
+ * Usually applied to the body element of the page to define the "namespace" of your CSS.
+ * You would normally use a project- / customer-specific name here and assign that to your
+ * body element in main.xhtml and use that name in your own extension file (let's name it layout.css)
+ * to override the styles pre-defined in Master.css.
+ */
+.layout-root {
+font-family: Arial,Verdana,Helv,sans-serif;
+font-size: 9pt;
+color:#000000;
+margin: 0;
+}
+
+/*
+ This is for the breadcrumbs
+ */
+#breadcrumb {
+	text-align: center;
+}
+
+ul#breadcrumb  {
+	list-style: none;
+	display: inline-table;
+	margin: 0;
+	padding-left: 2pt;
+	padding-top: 0pt;
+}
+ul#breadcrumb  li {
+	display: inline;
+}
+
+ul#breadcrumb li a {
+	display: block;
+	float: left;
+	height: 14pt;
+	background: #274268;
+	text-align: center;
+	font-size: 12pt;
+	padding: 5pt 10pt 1pt 15pt;
+	position: relative;
+	margin: 0 2pt 2pt 0;
+
+	text-decoration: none;
+	color: #fff;
+}
+ul#breadcrumb li a:after {
+	content: "";
+	border-top: 10pt solid transparent;
+	border-bottom: 10pt solid transparent;
+		border-left: 10pt solid #274268;
+	position: absolute; right: -9.5pt; top: 0;
+	z-index: 1;
+}
+
+ul#breadcrumb li a:before {
+	content: "";
+	border-top: 10pt solid transparent;
+		border-bottom: 10pt solid transparent;
+		border-left: 10pt solid #ffffff;
+	position: absolute; left: 0; top: 0;
+}
+
+ul#breadcrumb li:first-child a {
+	border-top-left-radius: 3pt; border-bottom-left-radius: 3pt;
+	padding-left: 10pt;
+}
+ul#breadcrumb li:first-child a:before {
+	display: none;
+}
+
+ul#breadcrumb li:last-child a {
+	padding-right: 10pt;
+	border-top-right-radius: 3pt; border-bottom-right-radius: 3pt;
+	pointer-events: none;
+	cursor: default;
+	background: #00aa82;
+}
+ul#breadcrumb li:last-child a:after {
+	display: none;
+}
+
+ul#breadcrumb li a:hover {
+	background: #00aa82;
+}
+ul#breadcrumb li a:hover:after {
+	border-left-color: #00aa82;
+}
+
+.sideBar {
+	background: white;
+}
+
+/** Used for collapsed side bar submenus */
+.sideBarH1Collapsed, .sideBarH2Collapsed {
+	color: #24547F;
+}
+
+.sideBarMenu1 {
+	color: #ff0000;
+}
+
+.sideBar li a {
+	color: #24547F;
+}
+
+.sideBar li a:hover {
+	color: #6494CF;
+}
+
+/*
+ * Styling the main layout sections of the screen.
+ */
+.menuContainer {
+ display:inline;
+ float: left;
+ background: transparent;
+ top: 0.2em;
+ padding: 0.2em;
+ width: 20em;
+ height: auto;
+ border: solid 1px #efefef;
+ overflow: auto;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  width: auto;
+  height: auto;
+  background: transparent;
+  overflow: auto;
+}
+
+.content {
+ right: 0;
+ background: transparent;
+ overflow: auto;
+ margin-left: #{TrendWebConfiguration.displaySideBar ? '21.5em' : '0'};
+ padding-top: 0.5em;
+ padding-bottom: 1em; /* same as fixed footer height */
+}
+
+.footer {
+  position: fixed;
+  height: 1em;
+  color: white;
+  text-align: right;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.2em;
+  clear: both;
+  background: url("#{resource['trend:foot_blue.png']}") top left repeat-x ;
+}
+
+.wrapper {
+	position: relative;
+	margin-top: 1.2em;
+	background: transparent;
+	bottom: 1.2em;
+	right: 0px;
+	left: 0px;
+}
+
+.footer a:link {color:#ffffff;}
+.footer a:visited {color:#ffffff;}
+.footer a:hover {color:#eeeeff;}
+
+
+.card {
+  padding: 1em;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+	color: #{TrendSkin.colors.header};
+	font-weight: bold;
+}
+
+.sectionHeader {
+	color: #3c619b;
+	font-weight: bold;
+}
+
+.main {
+border: solid #cccccc;
+border-width: 1px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+width: 100%;
+}
+
+a:link      {color: #3c619b;text-decoration:none}
+a:visited {color: #3c619b;text-decoration:none}
+a:hover   {color: #3c619b;text-decoration:underline}
+
+.titleBar {
+width: 100%;
+}
+
+.titleLogo {
+float: right;
+height: 100%;
+line-height: 70px;
+}
+
+.titleApplication {
+font-size: 18pt;
+font-weight:bold;
+color: #000066;
+padding-left:8px;
+text-align:left;
+/*height: 70px; needthis?*/
+}
+
+.titleHead, .titlePage {
+width: 100%;
+font-weight:bold;
+
+box-sizing: border-box;
+padding-left: 5px;
+padding-right: 5px;
+/*background: url("#{resource['trend:bg_blue.png']}") top left repeat-x ;*/
+
+height: 20pt;
+line-height: 20pt;
+}
+
+.titleHead {
+  height: 70px;
+}
+
+.titlePage {
+/* height: 30px;dontneed*/
+color:#ffffff;
+position: relative;
+background: url("#{resource['trend:bg_blue.png']}") top left repeat-x ;
+}
+
+table.title {
+	background-color:#ffffff;
+}
+
+.menu {
+vertical-align: top;
+width: 100px;
+}
+
+.menuGrow {
+border: solid #ffffff;
+border-width: 0 1px 1px 1px;
+}
+
+.submit {
+color: #000000;
+text-decoration: none;
+background-color: #{TrendSkin.colors.menuBackground};
+border: solid #000000;
+border-width: 1px;
+height: 25px;
+vertical-align: middle;
+padding: 5px;
+font-size:9pt;
+}
+
+.submit:hover {
+background-color: #ff6600;
+color: #ffffff;
+text-decoration: none !important;
+}
+
+/*
+ * Used to format exception messages (stack traces) in the default exception display panel.
+ */
+.exceptionDisplayPanel {
+    border: solid;
+    border-width: 1px;
+    border-color: #000000;
+    width:700px;
+    height:200px;
+    overflow:scroll;
+    font-size: 80%;
+}
+
+/*
+ * Used by the TrendException Handler to place the div displaying
+ * exceptions, that occur during rendering.
+ */
+.exceptionDisplayInPlace {
+	position: absolute; top: 150px; width: 700px;
+}
+
+/*
+ * Used by the progress indicator DIV which is opened, when an Ajax Request is on the run.
+ */
+#trend_progress_indicator {
+	z-index: 2000;
+	background: lightgrey;
+	opacity: 0.6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+/** This section is for browser.xhtml and related files */
+
+.browserFrame {
+	border-color: #{TrendSkin.colors.background};
+	border-style:solid;
+	border-width: 2px 1px 1px 1px;
+	height: 100%;
+}
+
+.browserButtonPanel {
+    margin-top: 5px;
+}
+
+.browserHeader {
+	padding:2px;
+	background: #efefef;
+	font-weight: bold;
+}
+
+.browserScrollerSection {
+	clear:both;
+	padding:5px;
+}
+
+.boeditorCell {
+	text-align: left;
+	vertical-align: top;
+}
+
+.bobrowserCell {
+	text-align: left;
+	vertical-align: top;
+}
+
+.buttonPanelCell {
+	text-align: left;
+	vertical-align: top;
+	padding-bottom: 1em;
+}
+
+#buttonPanel  button {
+	min-height: 2.1em;
+}
+
+/* Default buttons in the button panel */
+#buttonPanel  input {
+	background: #cecece;
+	position: relative;
+	top: 0.04em;
+	min-height: 2.1em;
+	margin-right: 0.5em;
+}
+
+.queryEditorCell {
+	text-align: left;
+	vertical-align: top;
+}
+
+.statusLine {
+color: #ffffff;
+background-color: #{TrendSkin.colors.background};
+}
+
+/* Style classes for Faces Messages displayed corresponding severity  */
+.errorMsg {
+	color: #ff6600;
+}
+
+.fatalMsg {
+	color: #aa0000;
+	font-weight: bold;
+	background: #ffeeee;
+}
+
+.warningMsg {
+	color: #0066ff;
+}
+
+.infoMsg {
+	color: #000000;
+}
+
+.groupHeaderLabel {
+margin: 0px 0px 0px 10px;
+color: white;
+font-size: 13pt;
+font-weight: bold;
+}
+
+.trend-card .editorLabel {
+	display:inline-block;
+	min-width: 8em;
+	text-align: right;
+	padding-right: 0.5em;
+}
+
+.editorField, .mandatoryEditorField, .disabledEditorField, select {
+	border: solid #c6c6c6;
+	border-width: 1px;
+}
+
+.editorField:focus:read-write, .mandatoryEditorField:focus:read-write, .disabledEditorField:focus:read-write, select:focus:read-write {
+	border:1px solid #{TrendSkin.colors.header};
+}
+
+.editorField:focus:-moz-read-write, .mandatoryEditorField:focus:-moz-read-write, .disabledEditorField:focus:-moz-read-write, select:focus:-moz-read-write {
+	border:1px solid #{TrendSkin.colors.header};
+}
+
+input[readonly], input[readonly="readonly"] {
+	background: #efefef;
+}

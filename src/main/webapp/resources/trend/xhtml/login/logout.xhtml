@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+  <ui:define name="title">Logout
+  <trend:viewBean classname="de.gebit.trend.servlet.gui.application.login.LogoutView"/>
+  </ui:define>
+  <ui:define name="menu">
+	<ui:include src="/resources/trend/xhtml//layouts/simplemenu.xhtml" />
+  </ui:define>
+
+  <ui:define name="content">
+	<p>
+	<trend:label id="infoMessage1" />
+	<a href="${request.contextPath}"><trend:label id="infoMessage2" /></a>.
+	</p>
+  </ui:define>
+
+</ui:composition>
+</html>

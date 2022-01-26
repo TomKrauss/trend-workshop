@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram default-package="true" version="1" metaclass="uml.class_diagram">
+    <default-package>
+    </default-package>
+    <class-diagram>
+        <id type="java.lang.String" value="CLSS-3r02gjfq0dn3f0hw4abth96pa"/>
+    </class-diagram>
+    <class id="./uml.class=ShoppingServiceBean">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
+            <visibleState type="boolean" value="false"/>
+            <layouted type="boolean" value="false"/>
+        </view>
+    </class>
+    <class id="./uml.class=BasicShoppingServiceBean">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="72" y="60"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+    </class>
+    <generalization subclass="./uml.class=BasicShoppingServiceBean" superclass="./uml.class=ShoppingServiceBean">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.AbstractLinkModel$LinkViewModel">
+            <bendpoints type="java.util.List">
+            </bendpoints>
+            <labelBendpoints type="java.util.List">
+            </labelBendpoints>
+            <visibleState type="boolean" value="true"/>
+        </view>
+    </generalization>
+</class-diagram>

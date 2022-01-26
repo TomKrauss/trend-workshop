@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+  <ui:define name="content">
+<ui:insert name="browser_types_selector">
+		<trend:list id="browserTypesSelector" type="checklist" domainAdapter="#{TrendView.browserTypesDomainAdapter}" 
+				rendered="#{TrendView.supportedBrowserTypes.size() > 1}" model="#{TrendView.supportedBrowserTypes}" valueChangeListener="#{TrendView.browserTypeSelected}">
+				<f:facet name="panel"><trend:panel columns="6" style="box-shadow: 2px 2px 1px grey; border: solid 1px grey; padding-bottom: 0.2em; position: absolute; top: 0.2em; right: 1.2em;"/></f:facet>
+		</trend:list>
+</ui:insert>
+   <table border="0" width="100%">
+   	<tr><td>
+		<table border="0" width="100%" cellpadding="3" cellspacing="0" >
+		<tr>
+			<td colspan="2" class="queryEditorCell">
+<!-- Insertion point for a custom query editor -->
+<ui:insert name="query_editor">
+				<ui:include src="/resources/trend/xhtml/layouts/queryEditor.xhtml">
+					<ui:param name="query_editor_rerender" value="alternateBrowserParent cDetailsEditor"/>
+				</ui:include>
+</ui:insert>
+			</td>
+		</tr>
+		<tr>
+			<td class="bobrowserCell">
+				<trend:panel prependId="false" id="alternateBrowserParent" renderDiv="true" rendered="false"/>
+				<trend:panel prependId="false" id="browserParent" renderDiv="true">
+<!-- Insertion point for a custom table (browser) -->
+<ui:insert name="browser">
+				<ui:include src="/resources/trend/xhtml/layouts/browser.xhtml">
+					<ui:param name="browser_rerender" value="@form"/>
+					<ui:param name="rolloverMode" value="false"/>
+					<ui:param name="browser_execute" value="@form"/>
+				</ui:include>
+</ui:insert>
+			</trend:panel>
+			</td>
+			</tr>
+			<tr>
+			<td class="boeditorCell" colspan="2">
+<!-- Insertion point for a custom details editor -->
+<ui:insert name="details_editor">
+					<trend:boedit id="cDetailsEditor" binding="#{TrendView.detailsEditor}">
+						<f:ajax render="buttonPanel"/>
+					</trend:boedit>
+</ui:insert>
+			</td>
+			</tr>
+		</table>
+       </td></tr>
+       <tr>
+			<td>
+<!-- Insertion point for a custom button panel -->
+<ui:insert name="button_panel">
+			<ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/>
+</ui:insert>
+			</td>
+       </tr>
+   </table>
+
+
+  </ui:define>
+
+</ui:composition>
+</html>

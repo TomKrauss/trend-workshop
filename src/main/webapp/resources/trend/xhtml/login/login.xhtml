@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+  <ui:define name="title">Login</ui:define>
+  <ui:define name="view_listeners">
+  	<!-- Special trick to avoid having to pass the view class name as a request parameter for login views: 
+  			turn the TrendView into a view scoped bean
+		  	and attach it as a phase listener to the view.
+  	   -->
+  	<f:phaseListener binding="#{LoginViewBean}"/>
+  </ui:define>
+  <ui:define name="menu">
+	<ui:include src="/resources/trend/xhtml/layouts/simplemenu.xhtml" />
+  </ui:define>
+
+  <ui:define name="content">
+  <trend:panel columns="2">
+  <trend:label id="usernameLabel" labelFor="j_username"/><trend:input id="j_username" type="text" size="25" />
+  <trend:label id="passwordLabel" labelFor="j_password"/><trend:input passwordMode="true" id="j_password" type="text" size="25" />
+  <trend:label id="sessionSelectorLabel" labelFor="sessionSelector" rendered="#{LoginViewBean.displaySessionSelector}"/><trend:list id="sessionSelector" visibleItemCount="1" rendered="#{LoginViewBean.displaySessionSelector}"/>
+  <trend:label id="languageLabel" labelFor="languageSelector" rendered="#{LoginViewBean.displayLanguageSelector}"/><trend:list id="languageSelector" visibleItemCount="1" rendered="#{LoginViewBean.displayLanguageSelector}"/>
+  </trend:panel>
+  <div style="height: 30px;"/>
+  <trend:action id="loginButton" rendererType="#{TrendSkin.actionButtonRendererType}"  actionListener="#{LoginViewBean.login}" accesskey="o"/>
+
+<h:inputHidden id="trend-recreateViewIfExpired" value="true"/>
+<h:inputHidden id="targetURL" binding="#{LoginViewBean.targetURLStore}"/>
+<h:inputHidden id="trend-viewClass" binding="#{LoginViewBean.viewClassStore}"/>
+<p><trend:label id="passwordLost1" />
+   <a href="javascript:alert('Sorry: sending passwords is not yet implemented.')"><trend:label id="passwordLostPage" /></a><f:verbatim> &nbsp;</f:verbatim> 
+   <trend:label id="passwordLost2" /></p>
+   <p><trend:label id="infoMessage4" /></p>
+
+</ui:define>
+
+</ui:composition>
+</html>

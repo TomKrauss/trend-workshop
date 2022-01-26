@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+			<table border="0" width="100%">
+				<tr>
+					<td>
+					<table border="0" width="100%" cellpadding="3" cellspacing="0">
+						<tr>
+							<td colspan="2" class="queryEditorCell">
+<!-- Insertion point for a custom query editor -->
+<ui:insert name="query_editor">
+							<trend:queryEditor id="cQueryEditor" />
+</ui:insert>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><trend:label
+								quotedText="#{TrendView.pcView.helpText}"
+								rendered="#{TrendView.pcView.helpText != null}" /></td>
+						</tr>
+						<tr>
+							<td class="bobrowserCell">
+<!-- Insertion point for a custom table (browser) -->
+<ui:insert name="browser">
+							<ui:include src="/resources/trend/xhtml/layouts/browser.xhtml">
+								<ui:param name="rolloverMode" value="false"/>
+								<ui:param name="browser_rerender" value="buttonPanel"/>
+							</ui:include>
+</ui:insert>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="boeditorCell">
+<!-- Insertion point for a custom details editor -->
+<ui:insert name="details_editor">
+							<trend:boedit id="cDetailsEditor" binding="#{TrendView.detailsEditor}"/>
+</ui:insert>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+		       <tr>
+					<td>
+<!-- Insertion point for a custom button panel -->
+<ui:insert name="button_panel">
+					<ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/>
+</ui:insert>
+					</td>
+		       </tr>
+			</table>
+	</ui:define>
+
+</ui:composition>
+</html>

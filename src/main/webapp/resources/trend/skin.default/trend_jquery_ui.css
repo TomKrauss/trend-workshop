@@ -1,0 +1,14 @@
+
+/* Needed to work around some issues with using JQuery UI in combination with TREND */
+
+option.ui-icon {
+  background-position: left top;
+  background-repeat: no-repeat !important;
+  padding-left: 20px;
+}
+
+.ui-widget {
+  font-family: Arial,Verdana,Helv,sans-serif;  
+  font-size: 9pt;
+}
+

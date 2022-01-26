@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modeller>
+    <referencesMustBeResolveable>false</referencesMustBeResolveable>
+    <strictDatabaseModelling>true</strictDatabaseModelling>
+    <outputPath context="resources.web">/trend-workshop/src/main/webapp</outputPath>
+    <generateConstants>true</generateConstants>
+    <generateWellknownTransitionConstants>false</generateWellknownTransitionConstants>
+    <generateActivityIDFilePerDiagram>false</generateActivityIDFilePerDiagram>
+    <generateModelLoaderConstants>false</generateModelLoaderConstants>
+    <useQualifiedDiagramNames>true</useQualifiedDiagramNames>
+    <copyMethodComments>false</copyMethodComments>
+    <copyAttributeComments>false</copyAttributeComments>
+    <updateModelLoaderConfiguration>MODULE_XML</updateModelLoaderConfiguration>
+    <generator>
+        <configuration modelLoader="de.gebit.trend.workshop.TrendLoader" modelGenerator="DefaultTrendModelGenerator" base="de.gebit.trend.workshop" includeSubpackages="true" default="true" inheritGenerateConstants="true"/>
+    </generator>
+</modeller>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration
+	xmlns="http://www.gebit.de/TREND/config/9.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--
+###############################################################################
+#
+# Sample Application - specific TREND configuration file.
+#
+# Is loaded through the default extension hook to load application specific configuration
+# files defined in trend-base.jar!config/trendconfig.xml
+#
+# Defines standard sections to configure the TREND sessions, factories, application container and
+# logger.
+#
+# Important Note: you cannot configure the interface mappings here, but you have to place
+# interface mappings in a separate file named config/application/interfaces.properties.
+#
+###############################################################################
+-->
+
+<!--
+# Sample for a Logger configuration.
+#
+# This section is only applicable when using the TREND logger implementation itself.
+# TREND will log by default using SLF4J which allows you to use other loggers such as LOG4J or
+# a TREND provided logger implementation located in trend-logger.jar
+#
+# module.<name>.level: Sets the log level of the specified ModuleLogger
+# -> Please refer to the class de.gebit.trend.TrendLogModules for the complete
+#    list of available names.
+# loghandler.<name>.filename: Routes the output for a log module to a particular
+# destination file.
+#
+-->
+<properties configurationId="trend.logger">
+	<propertySection name="global">
+		<property name="level" value="FINE"/>
+		<property name="defaultlevel" value="FINE"/>
+	</propertySection>
+	<propertySection name="module">
+		<property name="TREND_Configuration.level" value="WARNING"/>
+		<property name="TREND_MANAGEMENT.level" value="WARNING"/>
+	</propertySection>
+	<propertySection name="loghandler">
+		<propertySection name="file">
+			<property name="maxFileSize" value="4000000"/>
+			<property name="backupCount" value="2"/>
+			<property name="backupExtension" value=".bak"/>
+			<property name="filename" value="log/messages.log"/>
+			<property name="className" value="de.gebit.trend.logger.impl.FileLogHandler"/>
+		</propertySection>
+		<propertySection name="console">
+			<property name="level" value="FINE"/>
+			<property name="className" value="de.gebit.trend.logger.impl.ConsoleLogHandler"/>
+		</propertySection>
+	</propertySection>
+</properties>
+
+<!--
+##############################################
+#
+# Sample factory configuration.
+# Use this as an example showing how to replace standard TREND
+# factories with project specific ones.
+#
+-->
+<!--
+<properties configurationId="trend.factory">
+	<property name="de.gebit.trend.gui.list.Factory" values="de.mycompany.myproject.trend.gui.list.Factory"/>
+</properties>
+-->
+
+<!--
+##############################################
+#
+# Configures "generic Jdbc Peers", i.e. TREND will determine
+# the mapping from BOs to the database table from the model.
+# Note, that in order to use generic Jdbc Peers you
+# must include the trend-tools.jar in the CLASSPATH.
+#
+-->
+<defineVariable name="trend.genericJdbcPeers" value="true"/>
+
+
+<!--
+##############################################
+#
+# Sample section to configure the TREND Resource Editor.
+# Support 4 languages by default, and start with messages
+# being defined during development in German. Do not generate
+# seperate resource messages for table headers and labels to
+# minimize resource bundle size.
+#
+-->
+<properties configurationId="trend.tools.resourceeditor" variableReplacement="true">
+	<property name="dontGenerateLabelResources" value="true"/>
+	<property name="leadLocale" value="de"/>
+	<propertyCollection name="locale">
+		<property value="en"/>
+		<property value="de"/>
+		<property value="fr"/>
+		<property value="it"/>
+	</propertyCollection>
+</properties>
+
+<!--
+##############################################
+#
+# Sample session (TREND Access Layer) configuration.
+# We define the name of the files to use by the XML session,
+# the name of the database file, when using H2 and the database
+# name when using MySQL
+#
+-->
+<properties configurationId="trend.sessions" variableReplacement="true">
+	<!-- Note, that this puts the H2 database in a path relative to the VM start directory. DSMG is by default started in the src directory, so you have to re-configure this
+			value, when generating the tables for H2 with DSMG or use an absolute path here -->
+	<property name="SessionName.H2.database" value="./trend"/>
+	<property name="SessionName.XML.filename" value="${trend.xmlfile-xml}"/>
+	<property name="SessionName.MySQL.database" value="TREND"/>
+	<property name="tableQualifierMapping.RDBQualifier" value="TREND"/>
+	<property name="tableQualifierMapping.RDBShoppingQualifier" value="SHOPPING"/>
+</properties>
+
+<!--
+##############################################
+#
+# Specific configuration of the application frame (umlrunner)
+#
+-->
+<properties configurationId="trend.application">
+	<property name="login.defaultSessionName" value="XML"/>
+	<property name="login.autoLogin" value="false"/>
+	<property name="login.userName" value="Tom"/>
+	<propertySection name="ui">
+		<property name="i18nLabelPattern" value="${message}:"/>
+		<property name="taskBarSystemStyle" value="true"/>
+		<property name="showCloseButtonsOnTabs" value="true"/>
+		<property name="storePersonalizationData" value="true"/>
+		<property name="windowTitleFormat" value="${usecase_title} - ${view_title}${skip_identical_sections}"/>
+		<property name="showHourglassWhenExecutingActions" value="true"/>
+		<property name="loginDialog.resizable" value="false"/>
+		<property name="refreshBrowsersOnOpenByDefault" value="true"/>
+		<property name="applicationTitle" value="Shopping Application"/>
+		<property name="terminateCleanWorkflowsWithoutConfirmation" value="true"/>
+	</propertySection>
+	<property name="p15nModuleID" value="ShoppingApplication"/>
+</properties>
+
+<properties configurationId="workshop.shopping">
+	<property name="d-p-c" value="ELECTRONICS"/>
+</properties>
+
+</configuration>

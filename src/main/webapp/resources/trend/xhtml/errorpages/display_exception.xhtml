@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<ui:composition template="/resources/trend/xhtml/layouts/main_no_form.xhtml">
+  <ui:define name="title">Error Page</ui:define>
+  <ui:define name="menu">
+	<c:if test="#{TrendWebConfiguration.displaySideBar}">
+	<ui:include src="/resources/trend/xhtml/layouts/simplemenu.xhtml" />
+	</c:if>
+  </ui:define>
+
+  <ui:define name="content">
+   	<trend:viewBean classname="de.gebit.trend.servlet.gui.WSimpleView"  viewTitle="UML Runner"/>
+
+  	<p>
+  	The following error has occurred, when accessing page with URI: ${ExceptionBean.requestUri}
+  	</p>
+  	<div>
+  	HTTP user agent: <code>#{header['user-agent']}</code>
+ 	</div>
+ 	<div>
+  	Exception type: <code>${ExceptionBean.exceptionType}</code>
+  	</div>
+  	<trend:panel rendered="#{ExceptionBean.errorMessage != null}">
+  	Message: <span class="errorMsg">${ExceptionBean.errorMessage}</span>
+ 	</trend:panel>
+  	<h3>Stacktrace</h3>
+  	<div class="exceptionDisplayPanel">
+  	${ExceptionBean.stackTrace}
+  	</div>
+
+  	<p>
+  	<trend:panel rendered="#{ExceptionBean.statusCode != null}">
+  	<h3>Status Code</h3>
+ 	  ${ExceptionBean.statusCode}
+ 	</trend:panel>
+ 	</p>
+
+</ui:define>
+
+</ui:composition>
+</html>

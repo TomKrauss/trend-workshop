@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<use-case-diagram version="1" metaclass="uml.use_case_graph">
+    <diagram-system-boundary>
+        <stereotype type="java.lang.String" value="Application Actions"/>
+        <diagram type="ref" ref="./"/>
+        <id type="java.lang.String" value="USCS-3r02gjdyzd85rcyjk1z4wucgo"/>
+    </diagram-system-boundary>
+    <uml.use_case>
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="300" y="48"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+        <name type="java.lang.String" value="Go Shopping"/>
+        <stereotype type="java.lang.String" value="Workflow"/>
+        <targetClass type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.hyperlinks.IUri" value="uuid://ACTV-3r02gjih0q2f48olq39lzdvro"/>
+        <id type="java.lang.String" value="USCS-3r02gjih0q2f48olq39lzdaic"/>
+    </uml.use_case>
+    <uml.use_case>
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="false"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="276" y="216"/>
+            <size type="org.eclipse.draw2d.geometry.Dimension" width="172" height="55"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+        <dataEntryType type="java.lang.String" value="Specific"/>
+        <name type="java.lang.String" value="Maintain Products"/>
+        <stereotype type="java.lang.String" value="DataEntry"/>
+        <targetClass type="ref" ref="element://uml.package=de.gebit.trend.workshop.bo/uml.class=Product"/>
+        <id type="java.lang.String" value="USCS-3r02gjdyzd85rcyjk1z4wuc01"/>
+    </uml.use_case>
+    <uml.use_case>
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="252" y="336"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+        <dataEntryType type="java.lang.String" value="Specific"/>
+        <name type="java.lang.String" value="Customer"/>
+        <stereotype type="java.lang.String" value="DataEntry"/>
+        <targetClass type="ref" ref="element://uml.package=de.gebit.trend.workshop.bo/uml.class=Customer"/>
+        <id type="java.lang.String" value="USCS-3r02gjdyzd85rcyjk1z4wuatu"/>
+    </uml.use_case>
+    <uml.actor>
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="48" y="48"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+        <name type="java.lang.String" value="Customer"/>
+        <id type="java.lang.String" value="ACTR-3r02gjdyzd85rcyjk1z4wuc7p"/>
+    </uml.actor>
+    <uml.actor>
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="72" y="204"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+        <name type="java.lang.String" value="Vendor"/>
+        <id type="java.lang.String" value="ACTR-3r02gjdyzd85rcyjk1z4wuc00"/>
+    </uml.actor>
+    <base.link restore-hint="communicates">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.ILinkViewModel">
+            <bendpoints type="java.util.List">
+            </bendpoints>
+            <labelBendpoints type="java.util.List">
+            </labelBendpoints>
+            <visibleState type="boolean" value="true"/>
+        </view>
+        <stereotype type="java.lang.String" value="communicates"/>
+        <id type="java.lang.String" value="LNK-3r02gjdyzd85rcyjk1z4wuc1h"/>
+        <source type="ref" ref="./uml.actor=Customer#ACTR-3r02gjdyzd85rcyjk1z4wuc7p"/>
+        <target type="ref" ref="./uml.use_case=Go+Shopping#USCS-3r02gjih0q2f48olq39lzdaic"/>
+    </base.link>
+    <base.link restore-hint="communicates">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.ILinkViewModel">
+            <bendpoints type="java.util.List">
+            </bendpoints>
+            <labelBendpoints type="java.util.List">
+            </labelBendpoints>
+            <visibleState type="boolean" value="true"/>
+        </view>
+        <stereotype type="java.lang.String" value="communicates"/>
+        <id type="java.lang.String" value="LNK-3r02gjdyzd85rcyjk1z4wubwh"/>
+        <source type="ref" ref="./uml.actor=Vendor#ACTR-3r02gjdyzd85rcyjk1z4wuc00"/>
+        <target type="ref" ref="./uml.use_case=Maintain+Products#USCS-3r02gjdyzd85rcyjk1z4wuc01"/>
+    </base.link>
+    <base.link restore-hint="communicates">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.ILinkViewModel">
+            <bendpoints type="java.util.List">
+            </bendpoints>
+            <labelBendpoints type="java.util.List">
+            </labelBendpoints>
+            <visibleState type="boolean" value="true"/>
+        </view>
+        <stereotype type="java.lang.String" value="communicates"/>
+        <id type="java.lang.String" value="LNK-3r02gjdyzd85rcyjk1z4wuaq8"/>
+        <source type="ref" ref="./uml.actor=Vendor#ACTR-3r02gjdyzd85rcyjk1z4wuc00"/>
+        <target type="ref" ref="./uml.use_case=Customer#USCS-3r02gjdyzd85rcyjk1z4wuatu"/>
+    </base.link>
+</use-case-diagram>

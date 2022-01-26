@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<body>
+	<div class="exceptionDisplayInPlace">
+  	<p>
+  	The following error has occurred, when accessing web page  ${ExceptionBean.requestUri}:
+  	</p>
+  	<div>
+  	HTTP user agent: <code>#{header['user-agent']}</code>
+ 	</div>
+ 	<div>
+  	Exception type: 	<code>${ExceptionBean.exceptionType}</code>
+  	</div>
+  	<div>
+  	Message: <span class="errorMsg">${ExceptionBean.errorMessage}</span>
+ 	</div>
+
+  	<h3>Stacktrace</h3>
+  	<div class="exceptionDisplayPanel">
+  	${ExceptionBean.stackTrace}
+  	</div>
+  
+  	<p>
+  	<trend:panel rendered="#{ExceptionBean.statusCode != null}">
+  	<h3>Status Code</h3>
+ 	  ${ExceptionBean.statusCode} 
+ 	</trend:panel>
+ 	</p>
+ 	</div>
+</body>
+
+</html>

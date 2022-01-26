@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+		<table border="0" width="100%">
+			<tr>
+				<td>
+<!-- Insertion point for a custom list to select the method to execute-->
+<ui:insert name="method_selection">
+				<trend:list binding="#{TrendView.methodSelection}"/>
+</ui:insert>
+				</td>
+			</tr>
+			<tr>
+				<td>
+<!-- Insertion point for a custom execution editor -->
+<ui:insert name="execution_editor">
+				<trend:panel binding="#{TrendView.executionEditor}"/>
+</ui:insert>
+				</td>
+			</tr>
+	       <tr>
+				<td>
+<!-- Insertion point for a custom button panel -->
+<ui:insert name="button_panel">
+				<ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/>
+</ui:insert>
+				</td>
+	       </tr>
+		</table>
+	</ui:define>
+</ui:composition>
+</html>

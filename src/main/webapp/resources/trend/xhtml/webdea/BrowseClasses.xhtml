@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<ui:composition template="/resources/trend/xhtml/layouts/main.xhtml">
+	<ui:define name="content">
+		<table>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="25%" valign="top"><trend:label id="helpText" /></td>
+				<td valign="top">&nbsp;<trend:list id="classList"
+					visibleItemCount="10" /></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;</td>
+				<td><trend:label id="qualifiedClassnamesText" /><trend:input
+					id="qualifiedClassnamesCB" type="checkbox" /></td>
+			</tr>
+		</table>
+
+		<table>
+			<tr>
+				<td><ui:include src="/resources/trend/xhtml/layouts/buttonPanel.xhtml"/></td>
+			</tr>
+		</table>
+	</ui:define>
+
+</ui:composition>
+</html>

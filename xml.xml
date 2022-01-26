@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TRENDBusinessObjects version="6.5"
+xmlns="http://www.gebit.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.gebit.de xml.xsd">
+<de.gebit.trend.bo.persistence.keygen.HighestKey>
+    <className>default</className>
+    <memberName>default</memberName>
+    <number>3</number>
+</de.gebit.trend.bo.persistence.keygen.HighestKey>
+<de.gebit.trend.workshop.bo.Basket>
+    <_customer_id>12884901888</_customer_id>
+    <created>2022-01-19</created>
+    <id>8589934593</id>
+    <lastUser>Tom</lastUser>
+</de.gebit.trend.workshop.bo.Basket>
+<de.gebit.trend.workshop.bo.BasketPosition>
+    <_basket_id>8589934593</_basket_id>
+    <_product_id>4294967298</_product_id>
+    <id>8589934592</id>
+    <quantity>1</quantity>
+</de.gebit.trend.workshop.bo.BasketPosition>
+<de.gebit.trend.workshop.bo.Customer>
+    <city>Berlin</city>
+    <firstname>Tom</firstname>
+    <id>12884901888</id>
+    <lastUser>Tom</lastUser>
+    <lastname>Krauß</lastname>
+    <street>Schwiebusser Straße</street>
+    <zipCode>10965</zipCode>
+</de.gebit.trend.workshop.bo.Customer>
+<de.gebit.trend.workshop.bo.Product>
+    <description>Cool phone, just released</description>
+    <id>4294967296</id>
+    <lastUser>Tom</lastUser>
+    <name>I Phone</name>
+    <price>1200.00</price>
+    <productCategory>ELECTRONICS</productCategory>
+</de.gebit.trend.workshop.bo.Product>
+<de.gebit.trend.workshop.bo.Product>
+    <description>Chiquita from Bolivia</description>
+    <id>4294967297</id>
+    <name>Bananas</name>
+    <price>1.99</price>
+    <productCategory>FOOD</productCategory>
+</de.gebit.trend.workshop.bo.Product>
+<de.gebit.trend.workshop.bo.Product>
+    <description>Coll book by Tolkien</description>
+    <id>4294967298</id>
+    <name>Lord of the rings</name>
+    <price>9.99</price>
+    <productCategory>BOOKS</productCategory>
+</de.gebit.trend.workshop.bo.Product>
+</TRENDBusinessObjects>

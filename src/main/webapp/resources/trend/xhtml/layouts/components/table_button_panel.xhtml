@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+<!--
+  Include for button panel displayed beneath the table body.
+  The include has one parameter - panelId, and two "defines" - leftButtonPanel and rightButtonPanel.
+	<ui:decorate template="/resources/trend/xhtml/layouts/components/table_button_panel.xhtml">
+		<ui:param name="panelId" value="fileButtonPanel"/>
+		<ui:define name="leftButtonPanel">
+			<trend:action resourceID="uploadFileButton" id="upload.files" actionCommand="upload.files" />
+		</ui:define>
+		<ui:define name="rightButtonPanel">
+			<trend:action resourceID="Edit" id="edit.files" actionCommand="edit.files" />
+		</ui:define>
+	</ui:decorate>
+ -->
+<ui:composition>
+	<div style="border-top: solid 1px #aaaaaa; padding: 2px;">
+		<trend:panel id="${panelId}" styleClass="browserButtonPanel">
+			<div style="float:left; text-align:left;">
+				<ui:insert name="leftButtonPanel" />
+			</div>
+			<div style="float:right; text-align:right;">
+				<ui:insert name="rightButtonPanel" />
+			</div>
+			<div style="clear:both;"></div>
+		</trend:panel>
+	</div>
+</ui:composition>
+</html>
