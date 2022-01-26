@@ -9,7 +9,7 @@ Sample workshop for the _TREND framework_ covering topics:
 - Configuration Objects
 - Web Beans (JSF UI)
 
-For more details goto [www.gebit.de](www.gebit.de).
+For more details goto [www.gebit.de](https://www.gebit.de).
 
 Enjoy Tom
 
