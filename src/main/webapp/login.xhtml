@@ -12,11 +12,26 @@
 <ui:composition template="/resources/trend/xhtml/pc/BOEditor.xhtml">
 	<ui:define name="editor">
 			<trend:boedit id="cEditor">
-				<trend:panel columns="2">
-					Useruser: <h:inputText id="username"/>
-					<trend:label labelFor="password" id="passwordLabel"/><trend:field id="password"/>
+				<trend:panel columns="3">
+					User: <h:inputText id="username"/>
+					<trend:action id="setUser" text="Set User">
+						<f:ajax listener="#{TrendController.setUser}" render="cEditor"/>
+					</trend:action>
+					<trend:label labelFor="password" id="passwordLabel" 
+						rendered="#{TrendController.passwordVisible}"
+					/><trend:field 
+					id="password" rendered="#{TrendController.passwordVisible}"/>
+					<trend:action id="toggleVisibility" text="Toggle Password Visibility">
+						<f:ajax listener="#{TrendController.togglePasswordVisibility}" render="cEditor"/>
+					</trend:action>
 				</trend:panel>
 			</trend:boedit>
+	</ui:define>
+	<ui:define name="button_panel">
+		<div style="border: 5px red solid;"><trend:panel id="buttonPanel" binding="#{TrendView.buttonPanel}">
+		<f:attribute name="ajaxButtons" value="Print"/>
+	</trend:panel></div>
+	
 	</ui:define>
 </ui:composition>
 </html>

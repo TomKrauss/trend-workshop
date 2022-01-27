@@ -1,0 +1,30 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:trend="http://de.gebit.trend/trend/webbeans">
+
+<trend:resourceReferences/>
+<ui:composition template="/resources/trend/xhtml/pc/BOEditor.xhtml">
+	<ui:define name="editor">
+	<!-- This is a sample on how to define a custom editor -->
+			<trend:boedit id="cEditor">
+				<trend:panel columns="2">
+					Payment: <trend:label id="payment-paymentType"/>
+					Shipping Country: <trend:label id="shippingInfo-country"/>
+					Shipping City: <trend:label id="shippingInfo-city"/>
+					Shipping Street: <trend:label id="shippingInfo-street"/>
+					Products: <trend:table id="products" fieldIdentifiers="name,price,description"/>
+				</trend:panel>
+			</trend:boedit>
+	</ui:define>
+	You may redefine the following ui:define sections: 
+	    head_section: to define custom styles or include custom javascript files.
+		editor: to define a custom details editor
+		button_panel: to define a custom button panel (e.g. to add buttons manually)
+</ui:composition>
+</html>

@@ -1,0 +1,7 @@
+#TREND Metamodel Configuration
+#Thu Jan 27 15:28:33 CET 2022
+de.gebit.trend.base=true
+de.gebit.trend=true
+de.gebit.trend.uml=true
+de.gebit.trend.persistence=true
+de.gebit.trend.ui=true

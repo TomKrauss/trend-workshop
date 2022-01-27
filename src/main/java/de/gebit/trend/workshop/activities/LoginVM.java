@@ -13,6 +13,8 @@ package de.gebit.trend.workshop.activities;
 
 import de.gebit.trend.model.annotations.Stereotype;
 import de.gebit.trend.model.annotations.Interface;
+import de.gebit.trend.gui.GValidatable;
+import de.gebit.trend.gui.GValidationStatus;
 import de.gebit.trend.model.annotations.Generated;
 import de.gebit.trend.model.annotations.GeneratedType;
 
@@ -23,7 +25,7 @@ import de.gebit.trend.model.annotations.GeneratedType;
  */
 @Interface(false)
 @Stereotype(de.gebit.trend.model.UMLClass.STEREOTYPE_VALUE_OBJECT)
-public  class LoginVM extends de.gebit.trend.bo.ObservableValueObject implements java.io.Serializable {
+public class LoginVM extends de.gebit.trend.bo.ObservableValueObject implements GValidatable {
 
 	/**
 	 * Constant to be used instead of referring to an attribute (external field) instead of using a String. 
@@ -35,6 +37,7 @@ public  class LoginVM extends de.gebit.trend.bo.ObservableValueObject implements
 	 */
 	@Generated(type = GeneratedType.CONSTANT, generatedFor = "password")
 	public static final String PASSWORD_FIELD = "password";
+	@de.gebit.trend.model.annotations.Constraints(mandatory = true)
 	private String username;
 	@de.gebit.trend.model.annotations.UIFieldDescriptor(editorType = "password")
 	private String password;
@@ -53,6 +56,7 @@ public  class LoginVM extends de.gebit.trend.bo.ObservableValueObject implements
 	@Generated(type = GeneratedType.SETTER, generatedFor = "username")
 	public void setUsername(String aUsername) {
 		username = aUsername;
+		firePropertyChange(USERNAME_FIELD, aUsername);
 	}
 	/**
 	 * Returns the  {@link #password}  instance variable. <span style="display: none;">Generated getter method. To avoid re-generation, remove the &#64;Generated annotation.</span>
@@ -69,5 +73,15 @@ public  class LoginVM extends de.gebit.trend.bo.ObservableValueObject implements
 	@Generated(type = GeneratedType.SETTER, generatedFor = "password")
 	public void setPassword(String aPassword) {
 		password = aPassword;
+	}
+	/*
+	 * @see de.gebit.trend.gui.GValidatable#checkUserInput()
+	 */
+	@Override
+	public GValidationStatus checkUserInput() {
+		if (!getUsername().equals(getPassword())) {
+			return new GValidationStatus("Username does not match password as expected.");
+		}
+		return GValidationStatus.OK;
 	}
 }

@@ -55,6 +55,26 @@
             <layouted type="boolean" value="false"/>
         </view>
     </class>
+    <class id="./uml.class=ProvideShippingInformationController">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="1880" y="30"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+    </class>
+    <class id="./uml.class=Product_DetailsID">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
+            <visibleState type="boolean" value="false"/>
+            <layouted type="boolean" value="false"/>
+        </view>
+    </class>
     <class id="./uml.class=ProductVM">
         <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
             <ZOrder type="int" value="0"/>
@@ -76,6 +96,16 @@
             <layouted type="boolean" value="true"/>
         </view>
     </class>
+    <class id="./uml.class=OrderVMEditor">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="1640" y="30"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
+        </view>
+    </class>
     <class id="./uml.class=OrderVM">
         <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
             <ZOrder type="int" value="0"/>
@@ -84,6 +114,36 @@
             <location type="org.eclipse.draw2d.geometry.Point" x="492" y="360"/>
             <visibleState type="boolean" value="true"/>
             <layouted type="boolean" value="true"/>
+        </view>
+    </class>
+    <class id="./uml.class=MainStartID">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
+            <visibleState type="boolean" value="false"/>
+            <layouted type="boolean" value="false"/>
+        </view>
+    </class>
+    <class id="./uml.class=MainEndID">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
+            <visibleState type="boolean" value="false"/>
+            <layouted type="boolean" value="false"/>
+        </view>
+    </class>
+    <class id="./uml.class=MainEnd2ID">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
+            <visibleState type="boolean" value="false"/>
+            <layouted type="boolean" value="false"/>
         </view>
     </class>
     <class id="./uml.class=Login_FailedID">
@@ -127,6 +187,16 @@
             <layouted type="boolean" value="true"/>
         </view>
     </class>
+    <class id="./uml.class=HelloID">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
+            <visibleState type="boolean" value="false"/>
+            <layouted type="boolean" value="false"/>
+        </view>
+    </class>
     <class id="./uml.class=GoShoppingWorkflowContext">
         <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
             <ZOrder type="int" value="0"/>
@@ -165,6 +235,16 @@
             <location type="org.eclipse.draw2d.geometry.Point" x="0" y="0"/>
             <visibleState type="boolean" value="false"/>
             <layouted type="boolean" value="false"/>
+        </view>
+    </class>
+    <class id="./uml.class=ConfirmOrderController">
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.INodeViewModel">
+            <ZOrder type="int" value="0"/>
+            <defaultSize type="boolean" value="true"/>
+            <hiddenFlags type="int" value="0"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="1360" y="30"/>
+            <visibleState type="boolean" value="true"/>
+            <layouted type="boolean" value="true"/>
         </view>
     </class>
     <association source="./uml.class=OrderVM" name="OrderVM_shippingInfo_ShippingInfoVM">

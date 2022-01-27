@@ -37,4 +37,10 @@ public interface LoginID {
 	 */
 	public static final String LOGIN_FAILED = "loginFailed";
 
+	/**
+	 * Constant for transition named 'setUser'
+	 * void from 'Login' to 'Login'
+	 */
+	public static final String SET_USER = "setUser";
+
 }

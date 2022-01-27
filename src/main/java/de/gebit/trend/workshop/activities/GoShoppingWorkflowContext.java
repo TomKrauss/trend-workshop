@@ -27,7 +27,7 @@ import de.gebit.trend.model.annotations.GeneratedType;
  * @author Tom
  * @version 25 Jan 2022
  */
-@Stereotype(UMLClass.STEREOTYPE_WORKFLOW_CONTEXT)
+@Stereotype("WorkflowContext")
 public class GoShoppingWorkflowContext<T> extends DataEntryContext<T> {
 
 	/**

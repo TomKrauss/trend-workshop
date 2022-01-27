@@ -26,6 +26,23 @@ import de.gebit.trend.model.annotations.Stereotype;
 @Stereotype(de.gebit.trend.model.UMLClass.STEREOTYPE_CONTROLLER)
 public class LoginController extends de.gebit.trend.gui.application.components.ServiceBOEditorController<LoginVM> {
 
+	private boolean passwordVisible = true;
+	
+	/**
+	 * @return the passwordVisible
+	 */
+	public boolean isPasswordVisible() {
+		return passwordVisible;
+	}
+	
+	public void togglePasswordVisibility() {
+		passwordVisible = !passwordVisible;
+	}
+	
+	
+	public void setUser() {
+		getModel().setUsername("Tom");
+	}
 
 	public void performNext(String aTransitionId) {
 		String tUserName = getModel().getUsername();

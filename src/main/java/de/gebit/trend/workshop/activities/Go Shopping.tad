@@ -230,12 +230,14 @@
             <visibleState type="boolean" value="true"/>
             <layouted type="boolean" value="true"/>
         </view>
+        <boeditorClass type="ref" ref="element://uml.package=de.gebit.trend.workshop.activities/uml.class=OrderVMEditor"/>
         <controllerClass type="ref" ref="element://uml.package=de.gebit.trend.workshop.activities/uml.class=ConfirmOrderController"/>
         <controllerSuperClass type="ref" ref="element://uml.package=de.gebit.trend.gui.application.components/uml.class=ServiceBOEditorController"/>
         <name type="java.lang.String" value="Confirm Order"/>
         <pluggableComponentType type="java.lang.String" value="BOEditor"/>
         <viewClass type="ref" ref="element://uml.package=de.gebit.trend.gui.application.components/uml.class=AbstractBOEditorView"/>
         <viewSuperClass type="ref" ref="element://uml.package=de.gebit.trend.gui.application.components/uml.class=AbstractBOEditorView"/>
+        <viewURL type="java.lang.String" value="confirm_order.xhtml"/>
         <id type="java.lang.String" value="ACTN-3r02gjih0q2f48olq39lzda3j"/>
     </uml.action>
     <uml.action>
@@ -257,7 +259,7 @@
             <ZOrder type="int" value="0"/>
             <defaultSize type="boolean" value="true"/>
             <hiddenFlags type="int" value="0"/>
-            <location type="org.eclipse.draw2d.geometry.Point" x="180" y="312"/>
+            <location type="org.eclipse.draw2d.geometry.Point" x="168" y="372"/>
             <visibleState type="boolean" value="true"/>
             <layouted type="boolean" value="true"/>
         </view>
@@ -309,12 +311,35 @@
     <uml.control_flow>
         <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.ILinkViewModel">
             <bendpoints type="java.util.List">
+                <element type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.BendpointModel">
+                    <firstRelativeDimension type="org.eclipse.draw2d.geometry.Dimension" width="139" height="31"/>
+                    <secondRelativeDimension type="org.eclipse.draw2d.geometry.Dimension" width="139" height="31"/>
+                </element>
+            </bendpoints>
+            <labelBendpoints type="java.util.List">
+                <element type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.LabelBendpointModel">
+                    <labelId type="java.lang.String" value="label"/>
+                    <location type="org.eclipse.draw2d.geometry.Point" x="1" y="29"/>
+                    <positioningPolicy type="int" value="2"/>
+                </element>
+            </labelBendpoints>
+            <visibleState type="boolean" value="true"/>
+        </view>
+        <actionMethod type="ref" ref="element://uml.package=de.gebit.trend.workshop.activities/uml.class=LoginController/uml.class.operation=setUser"/>
+        <name type="java.lang.String" value="setUser"/>
+        <transitionKind type="java.lang.String" value="void"/>
+        <id type="java.lang.String" value="CNTR-3r02gjewh3ftyx22pft4sorkq"/>
+        <source type="ref" ref="./uml.action=Login#ACTN-3r02gjih0q2f48olq39lzdvrk"/>
+        <target type="ref" ref="./uml.action=Login#ACTN-3r02gjih0q2f48olq39lzdvrk"/>
+    </uml.control_flow>
+    <uml.control_flow>
+        <view type="de.gebit.trend.toolinterfaces.eclipse.modeller.model.ILinkViewModel">
+            <bendpoints type="java.util.List">
             </bendpoints>
             <labelBendpoints type="java.util.List">
             </labelBendpoints>
             <visibleState type="boolean" value="true"/>
         </view>
-        <actionMethod type="ref" ref="element://uml.package=de.gebit.trend.workshop.activities/uml.class=LoginController/uml.class.operation=performNext"/>
         <name type="java.lang.String" value="next"/>
         <transitionKind type="java.lang.String" value="call"/>
         <id type="java.lang.String" value="CNTR-3r02gjih0q2f48olq39lzdvki"/>

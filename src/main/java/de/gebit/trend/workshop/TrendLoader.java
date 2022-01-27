@@ -99,6 +99,8 @@ private void loadGoShoppingUmlActivity() {
 	tempActionNode.setProperty(PROP_SM_ACTIVITY_VIEW_CLASS, "de.gebit.trend.gui.application.components.AbstractBOEditorView");
 	tempActionNode.setProperty(PROP_SM_MODEL_CLASS, "de.gebit.trend.workshop.activities.OrderVM");
 	tempActionNode.setProperty(PROP_SM_WORKFLOW_CONTEXT_CLASS, "de.gebit.trend.workshop.activities.GoShoppingWorkflowContext");
+	tempActionNode.setProperty(PROP_SM_BOEDITOR_CLASS, "de.gebit.trend.workshop.activities.OrderVMEditor");
+	tempActionNode.setProperty(PROP_SM_ACTIVITY_VIEW_URL, "confirm_order.xhtml");
 	tempActionNode.setProperty(PROP_SM_PLUGGABLE_COMPONENT_TYPE, "BOEditor");
 
 	// Transition Confirm Order.confirm to MainEnd
@@ -211,7 +213,6 @@ private void loadGoShoppingUmlActivity() {
 	tempTransition = createTransition();
 	tempTransition.setId("CNTR-3r02gjih0q2f48olq39lzdvki");
 	tempTransition.setName("next");
-	tempTransition.setProperty(PROP_SM_ACTION_METHOD, new ActionMethodDescriptor("de.gebit.trend.workshop.activities.LoginController#performNext"));
 	tempTransition.setProperty(PROP_SM_TRANSITION_KIND, "call");
 	tempTransition.setSourceObject(tempActionNode);
 	tempTransition.setTargetObject(fetchUMLActionNodeByName("Select Products", MetaclassNames.ACTION));
@@ -224,6 +225,16 @@ private void loadGoShoppingUmlActivity() {
 	tempTransition.setProperty(PROP_SM_TRANSITION_KIND, "exec");
 	tempTransition.setSourceObject(tempActionNode);
 	tempTransition.setTargetObject(fetchUMLActionNodeByName("MainEnd2", MetaclassNames.ACTIVITY_FINAL));
+	tempActionNode.addOutgoingLink(tempTransition);
+
+	// Transition Login.setUser to Login
+	tempTransition = createTransition();
+	tempTransition.setId("CNTR-3r02gjewh3ftyx22pft4sorkq");
+	tempTransition.setName("setUser");
+	tempTransition.setProperty(PROP_SM_ACTION_METHOD, new ActionMethodDescriptor("de.gebit.trend.workshop.activities.LoginController#setUser"));
+	tempTransition.setProperty(PROP_SM_TRANSITION_KIND, "void");
+	tempTransition.setSourceObject(tempActionNode);
+	tempTransition.setTargetObject(fetchUMLActionNodeByName("Login", MetaclassNames.ACTION));
 	tempActionNode.addOutgoingLink(tempTransition);
 
 	tempStateMachine.addChild(tempActionNode);
@@ -781,6 +792,9 @@ private void loadUMLAttributesAndOperationsInto1(UMLModel aModel) {
 	// --------------------------------------
 	tempClass = lookupUMLClass("de.gebit.trend.workshop.activities.LoginVM");
 	tempAttribute = createBOAttribute(tempClass, "username", "java.lang.String");
+	tempConstraints = new BasicPropertyConstraints();
+	tempConstraints.setNullable(false);
+	tempAttribute.setProperty(PROP_CONSTRAINTS, tempConstraints);
 	tempAttribute = createBOAttribute(tempClass, "password", "java.lang.String");
 	tempAttribute.setProperty(PROP_UI_COMPONENT_TYPE, "password");
 
@@ -984,6 +998,12 @@ protected void loadUMLServiceBeansInto(UMLModel aModel) {
  */
 @Override
 protected void loadUIClassesInto(UMLModel aModel) throws TrendFailureException {
+	UMLClass tempClass;
+
+	tempClass = aModel.createClass("de.gebit.trend.workshop.activities.OrderVMEditor");
+	tempClass.setStereotype(UMLClass.STEREOTYPE_BO_EDITOR);
+	tempClass.setProperty(PROP_CLASS_BOEDITOR_FOR, "de.gebit.trend.workshop.activities.OrderVM");
+
 }
 
 
